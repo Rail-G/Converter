@@ -1,0 +1,83 @@
+.cl {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+
+.cl-head {
+    background-color: rgb(222, 233, 254);
+    width: 100%;
+    height: 350px;
+    padding: 0 9rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.cl-head_text {
+    color: black;
+    font-size: 1.3rem;
+}
+
+.cl-head_btn {
+    background-color: rgba(229, 19, 58, 1);
+    color: white;
+    border: 0;
+    border-radius: 4px;
+    font-size: 1.2rem;
+    padding: 1rem;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    translate: -50% 50%;
+    cursor: pointer;
+    transition: all 500ms;
+    text-decoration-line: none;
+}
+
+.cl-head_btn:hover {
+    transform: scale(1.1);
+    transition: all 500ms;
+}
+
+.cl-head_rt_corner {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0; 
+    height: 0;
+    border-top: 100px solid #ffffff;
+    border-left: 100px solid transparent;
+}
+
+.cl-head_lb_corner {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-bottom: 100px solid #ffffff;
+    border-right: 100px solid transparent
+}
+
+.cl-head_logo {
+    width: 400px;
+    height: 250px;
+    background-image: url('../svg/Curr-Conv.svg');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.cl-table_col {
+    columns: 2;
+    column-gap: 50px;
+    margin: 0 10px;
+}
+
+.cl-body_text {
+    text-align: center;
+    margin-bottom: 10px;
+}
