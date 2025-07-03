@@ -21,6 +21,10 @@
     font-size: 1.3rem;
 }
 
+.cl-table {
+    position: relative;
+}
+
 .cl-head_btn {
     background-color: rgba(229, 19, 58, 1);
     color: white;
