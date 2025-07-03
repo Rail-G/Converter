@@ -1,4 +1,24 @@
-export function Table() {
+import { useEffect } from "react"
+import { useAppDispatch, useAppSelector } from "../../../hook"
+import { getUserCurrency } from "../../../redux/slice/userCurrency"
+import { getCurrencys } from "../../../redux/slice/currenciesList"
+import type { CurrenciesConversion } from "../../../typing"
+
+type TableType = {
+    countrysCurrencies: CurrenciesConversion[]
+}
+
+export function Table({countrysCurrencies}: TableType) {
+    const { userCurrency } = useAppSelector(state => state.userCurrency)
+    const dispatch = useAppDispatch()
+    useEffect(() => {
+        if (!countrysCurrencies.length) {
+            dispatch(getCurrencys())
+        }
+        if (!userCurrency.trim()) {
+            dispatch(getUserCurrency())
+        }
+    }, [])
     return (
         <table>
             <thead>
@@ -6,106 +26,18 @@ export function Table() {
                     <td>№ п/п</td>
                     <td>Валюта</td>
                     <td>Код валюты</td>
-                    <td>За 1 RUB</td>
+                    <td>За 1 {userCurrency}</td>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Доллар США</td>
-                    <td>USD</td>
-                    <td>78.21</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Евро</td>
-                    <td>EUR</td>
-                    <td>89.34</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Японская Иена</td>
-                    <td>JPY</td>
-                    <td>0.54</td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>Китайский Юань</td>
-                    <td>CNY</td>
-                    <td>10.34</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Доллар США</td>
-                    <td>USD</td>
-                    <td>78.21</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Евро</td>
-                    <td>EUR</td>
-                    <td>89.34</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Японская Иена</td>
-                    <td>JPY</td>
-                    <td>0.54</td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>Китайский Юань</td>
-                    <td>CNY</td>
-                    <td>10.34</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Доллар США</td>
-                    <td>USD</td>
-                    <td>78.21</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Евро</td>
-                    <td>EUR</td>
-                    <td>89.34</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Японская Иена</td>
-                    <td>JPY</td>
-                    <td>0.54</td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>Китайский Юань</td>
-                    <td>CNY</td>
-                    <td>10.34</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Доллар США</td>
-                    <td>USD</td>
-                    <td>78.21</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Евро</td>
-                    <td>EUR</td>
-                    <td>89.34</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Японская Иена</td>
-                    <td>JPY</td>
-                    <td>0.54</td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>Китайский Юань</td>
-                    <td>CNY</td>
-                    <td>10.34</td>
-                </tr>
+                {countrysCurrencies.map((elem, index) => {
+                    return <tr>
+                        <td>{index + 1}</td>
+                        <td>{elem.currencyName}</td>
+                        <td>{elem.currencyCode}</td>
+                        <td>{elem.cost}</td>
+                    </tr>
+                })}
             </tbody>
         </table>
     )

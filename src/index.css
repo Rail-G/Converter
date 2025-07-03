@@ -24,6 +24,8 @@ td {
 
 thead {
   background-color: rgb(193, 203, 212);
+  font-weight: 700;
+  border: 2px solid #000000
 }
 
 table {
@@ -33,4 +35,9 @@ table {
 
 tbody tr:nth-child(even) {
   background-color: rgb(239, 239, 239);
+}
+
+tbody tr:hover {
+  background-color: #343434;
+  color: #ffffff;
 }
