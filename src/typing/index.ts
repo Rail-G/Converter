@@ -31,3 +31,25 @@ export interface UserCurrencyState {
     userCurrency: string,
     errorText: string | null
 }
+
+export interface DebounceHook<T> {
+    func: () => T
+    time: number
+}
+
+export interface ConversionrateState {
+    conversionRate: number,
+    conversionResult: number
+    errorText: string | null
+}
+
+export interface ConversionRateRequest {
+    baseCode: string,
+    targetCode: string,
+    amount: number
+}
+
+export interface ConversionRateResponse {
+    conversion_rate: number,
+    conversion_result: number
+}
