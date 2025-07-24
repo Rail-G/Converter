@@ -39,17 +39,27 @@ export interface DebounceHook<T> {
 
 export interface ConversionrateState {
     conversionRate: number,
-    conversionResult: number
     errorText: string | null
 }
 
 export interface ConversionRateRequest {
     baseCode: string,
     targetCode: string,
-    amount: number
 }
 
 export interface ConversionRateResponse {
     conversion_rate: number,
     conversion_result: number
+}
+
+export interface InputBlockType {
+    firstBlock: string,
+    secondBlock: string
+}
+
+export interface InputBlockProp {
+    targetCurrency: string,
+    onChangeInput: (value: string) => void
+    currencyAmount: number,
+    onChangeAmount: (value: number) => void
 }

@@ -9,12 +9,7 @@ export const conversionRateEpic: Epic<RootAction, RootAction, RootState> = (acti
     ofType(getConversionRate.type),
     switchMap((action) => 
         ajax({
-            url: `${import.meta.env.VITE_EXCHANGERATE_API}
-            /${import.meta.env.VITE_EXCHANGERATE_TOKEN}
-            /pair
-            /${action.payload.baseCode}
-            /${action.payload.targetCode}
-            /${action.payload.amount}`,
+            url: `${import.meta.env.VITE_EXCHANGERATE_API}/${import.meta.env.VITE_EXCHANGERATE_TOKEN}/pair/${action.payload.baseCode}/${action.payload.targetCode}`,
             method: 'GET',
             headers: {'Content-Type': 'application/json'}
         }).pipe(

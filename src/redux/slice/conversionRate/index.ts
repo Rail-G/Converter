@@ -3,7 +3,6 @@ import type { ConversionRateRequest, ConversionRateResponse, ConversionrateState
 
 const initialState: ConversionrateState = {
     conversionRate: 0,
-    conversionResult: 0,
     errorText: null
 }
 
@@ -15,8 +14,7 @@ const conversionRateSlice = createSlice({
             state.errorText = null
         },
         setConversionRate: (state, action: PayloadAction<ConversionRateResponse>) => {
-            state.conversionRate = action.payload.conversion_rate,
-            state.conversionResult = action.payload.conversion_result
+            state.conversionRate = action.payload.conversion_rate
         },
         setErrorText: (state, action: PayloadAction<string>) => {
             state.errorText = action.payload
