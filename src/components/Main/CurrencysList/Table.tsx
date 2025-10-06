@@ -11,14 +11,14 @@ type TableType = {
 export function Table({countrysCurrencies}: TableType) {
     const { userCurrency } = useAppSelector(state => state.userCurrency)
     const dispatch = useAppDispatch()
-    // useEffect(() => {
-    //     if (!countrysCurrencies.length) {
-    //         dispatch(getCurrencys())
-    //     }
-    //     if (!userCurrency.trim()) {
-    //         dispatch(getUserCurrency())
-    //     }
-    // }, [])
+    useEffect(() => {
+        if (!countrysCurrencies.length) {
+            dispatch(getCurrencys())
+        }
+        if (!userCurrency.trim()) {
+            dispatch(getUserCurrency())
+        }
+    }, [])
     return (
         <table>
             <thead>

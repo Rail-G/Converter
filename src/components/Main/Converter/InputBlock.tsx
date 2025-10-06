@@ -1,7 +1,6 @@
 import { useState } from "react"
-import { useAppDispatch, useAppSelector } from "../../../hook"
+import { useAppSelector } from "../../../hook"
 import type { InputBlockProp } from "../../../typing"
-import { getConversionRate } from "../../../store/slice/conversionRate"
 
 export function InputBlock({onChangeInput, currencyAmount, onChangeAmount}: InputBlockProp) {
     const {countrysCurrencies} = useAppSelector(state => state.currencysList)
