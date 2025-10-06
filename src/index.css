@@ -18,7 +18,7 @@
 }
 
 td {
-  padding: 0.3rem 2rem;
+  padding: 0.4rem 2rem;
   text-align: center;
 }
 
@@ -40,4 +40,24 @@ tbody tr:nth-child(even) {
 tbody tr:hover {
   background-color: #343434;
   color: #ffffff;
+}
+
+@media (max-width: 1200px) and (min-width: 768px) {
+  td {
+    padding: 0.4rem 1.5rem;
+  }
+
+  thead {
+    font-size: 0.8rem
+  }
+}
+
+@media (max-width: 768px) {
+
+  td {
+    padding: 0.3rem 1.5rem;
+  }
+  thead {
+    font-size: 0.6rem
+  }
 }

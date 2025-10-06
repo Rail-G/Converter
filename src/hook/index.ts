@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import type { RootDispatch, RootState } from "../redux/store";
+import type { RootDispatch, RootState } from "../store/store";
 import { useEffect, useState, type AnyActionArg } from "react";
 import type { DebounceHook } from "../typing";
 import type { UnknownAction } from "redux";

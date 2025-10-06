@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { InputBlock } from "./InputBlock";
 import type { InputBlockType } from "../../../typing";
 import { useAppDispatch, useAppSelector } from "../../../hook";
-import { getConversionRate } from "../../../redux/slice/conversionRate";
+import { getConversionRate } from "../../../store/slice/conversionRate";
 
 export function ConverterBlock() {
     const [targetCurrency, setTargetCurrency] = useState<InputBlockType>({firstBlock: 'USD', secondBlock: 'USD'})

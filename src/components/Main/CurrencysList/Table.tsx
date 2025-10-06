@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 import { useAppDispatch, useAppSelector } from "../../../hook"
-import { getUserCurrency } from "../../../redux/slice/userCurrency"
-import { getCurrencys } from "../../../redux/slice/currenciesList"
+import { getUserCurrency } from "../../../store/slice/userCurrency"
+import { getCurrencys } from "../../../store/slice/currenciesList"
 import type { CurrenciesConversion } from "../../../typing"
 
 type TableType = {
@@ -11,14 +11,14 @@ type TableType = {
 export function Table({countrysCurrencies}: TableType) {
     const { userCurrency } = useAppSelector(state => state.userCurrency)
     const dispatch = useAppDispatch()
-    useEffect(() => {
-        if (!countrysCurrencies.length) {
-            dispatch(getCurrencys())
-        }
-        if (!userCurrency.trim()) {
-            dispatch(getUserCurrency())
-        }
-    }, [])
+    // useEffect(() => {
+    //     if (!countrysCurrencies.length) {
+    //         dispatch(getCurrencys())
+    //     }
+    //     if (!userCurrency.trim()) {
+    //         dispatch(getUserCurrency())
+    //     }
+    // }, [])
     return (
         <table>
             <thead>

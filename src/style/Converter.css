@@ -16,6 +16,7 @@
     left: 50%;
     translate: -50% 70%;
     background-color: #ffffff;
+    z-index: 1;
 }
 
 .converter__header h2 {
